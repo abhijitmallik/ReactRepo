@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import BookDate from './bookdata';
+import book from './book';
 
 const finalReducer = combineReducers({
-	bookList:BookDate
+	bookList:BookDate,
+	bookSelected:book
 });
 
 export default finalReducer;

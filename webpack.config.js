@@ -1,6 +1,6 @@
 
 module.exports={
-   entry: "./public/components/app.js",
+   entry: "./public/init.js",
    output:{
    	path : "./deploy",
    	filename : "app.js"

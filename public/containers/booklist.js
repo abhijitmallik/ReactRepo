@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux'; 
-//import Reducer from '../reducers/index';
+import {selectBook} from '../actions/selectBook';
+import {bindActionCreators} from 'redux';
 
 class BookList extends Component{
 	constructor(props){
@@ -16,14 +17,19 @@ class BookList extends Component{
 	iterateItems(){
 		return(
 		   this.props.books.map((book)=>{
-		   	 return(<li key={book.name}>{book.name}</li>)
+		   	 return(<li key={book.name} onClick={() => this.props.selectBook(book)}>{book.name}</li>)
 		   })
 		);
 	}
+
 }
 
 function mapPropsToState(state){
      return {books:state.bookList};
 }
 
-export default connect(mapPropsToState)(BookList);
+function mapPropsToAction(dispatch){
+     return bindActionCreators({selectBook:selectBook},dispatch);
+}
+
+export default connect(mapPropsToState,mapPropsToAction)(BookList);

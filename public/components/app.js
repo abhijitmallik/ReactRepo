@@ -1,13 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
-
-
-import ReactDOM from 'react-dom'; 
-
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reducers from '../reducers';
 import Books from '../containers/booklist';
+import BookDetails from '../containers/bookItem';
 
 
 export default class App extends Component{
@@ -15,16 +9,10 @@ export default class App extends Component{
 		return(
           <div>
             <Books />
+            <BookDetails />
           </div>
 		)
 	}
 }
 
-const store = createStore(reducers);
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  , document.getElementById('divId'));
 
