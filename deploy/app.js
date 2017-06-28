@@ -10499,9 +10499,7 @@ var _selectBook = __webpack_require__(95);
 
 var _redux = __webpack_require__(25);
 
-var _booklist = __webpack_require__(229);
-
-var _booklist2 = _interopRequireDefault(_booklist);
+__webpack_require__(229);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10537,7 +10535,7 @@ var BookList = function (_Component) {
 			return this.props.books.map(function (book) {
 				return _react2.default.createElement(
 					'li',
-					{ className: _booklist2.default.select, key: book.name, onClick: function onClick() {
+					{ className: 'select', key: book.name, onClick: function onClick() {
 							_this2.props.selectBook(book);
 						} },
 					book.name
@@ -11485,7 +11483,7 @@ exports = module.exports = __webpack_require__(102)();
 
 
 // module
-exports.push([module.i, ".select {\n\tcursor: pointer;\n\tdisplay: none;\n}", ""]);
+exports.push([module.i, ".select {\n\tcursor: pointer;\n}", ""]);
 
 // exports
 

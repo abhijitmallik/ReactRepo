@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux'; 
 import {selectBook} from '../actions/selectBook';
 import {bindActionCreators} from 'redux';
-import style from './booklist.css';
+import  './booklist.css';
 
 class BookList extends Component{
 	constructor(props){
@@ -18,7 +18,7 @@ class BookList extends Component{
 	iterateItems(){
 		return(
 		   this.props.books.map((book)=>{
-		   	 return(<li className={style.select} key={book.name} onClick={() => {this.props.selectBook(book)}}>{book.name}</li>)
+		   	 return(<li className="select" key={book.name} onClick={() => {this.props.selectBook(book)}}>{book.name}</li>)
 		   })
 		);
 	}
